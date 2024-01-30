@@ -10,13 +10,13 @@ public:
 	game(unsigned int x, unsigned int y, unsigned int seed);
 	~game();
 	void update();
-	bool*** active_table = nullptr;
+	char*** active_table = nullptr;
 private:
 	unsigned int size_x;
 	unsigned int size_y;
-	bool** rows1;
-	bool** rows2;
-	bool*** second_table = nullptr;
+	char** rows1;
+	char** rows2;
+	char*** second_table = nullptr;
 };
 
 
