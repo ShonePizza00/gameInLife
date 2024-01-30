@@ -22,15 +22,15 @@ game::game(unsigned int x, unsigned int y, unsigned int seed)
 		throw std::invalid_argument("X must be greater or equal 5");
 	if (y < 5)
 		throw std::invalid_argument("Y must be greater or equal 5");
-	rows1 = new bool* [y];
-	rows2 = new bool* [y];
+	rows1 = new char* [y];
+	rows2 = new char* [y];
 	for (int i = 0; i < y; ++i)
 	{
-		rows1[i] = new bool[x];
-		rows2[i] = new bool[x];
+		rows1[i] = new char[x];
+		rows2[i] = new char[x];
 		for (int j = 0; j < x; ++j)
 		{
-			rows1[i][j] = rand_() % 2;
+			rows1[i][j] = rand_() % 3;
 			rows2[i][j] = 0;
 		}
 	}
@@ -57,6 +57,7 @@ void game::update()
 		{
 			
 			int k = 0;
+			/*
 			k += (int)((*active_table)[(i - 1 + size_y) % size_y][(j - 1 + size_x) % size_x]);
 			k += (int)((*active_table)[(i - 1 + size_y) % size_y][j]);
 			k += (int)((*active_table)[(i - 1 + size_y) % size_y][(j + 1) % size_x]);
@@ -65,6 +66,7 @@ void game::update()
 			k += (int)((*active_table)[(i + 1) % size_y][(j - 1 + size_x) % size_x]);
 			k += (int)((*active_table)[(i + 1) % size_y][j]);
 			k += (int)((*active_table)[(i + 1) % size_y][(j + 1) % size_x]);
+			*/
 			// vvv - rules
 			if (k == 3)
 				(*second_table)[i][j] = 1;
@@ -78,7 +80,7 @@ void game::update()
 			// ^^^ - rules
 		}
 	}
-	bool*** t_table = active_table;
+	char*** t_table = active_table;
 	active_table = second_table;
 	second_table = t_table;
 }
