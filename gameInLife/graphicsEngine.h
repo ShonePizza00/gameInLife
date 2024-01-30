@@ -13,7 +13,7 @@ public:
 	graphicsEngine(unsigned int x, unsigned int y);
 	~graphicsEngine();
 
-	void update(bool** dispRows);
+	void update(char** dispRows);
 private:
 	unsigned int size_x;
 	unsigned int size_y;
