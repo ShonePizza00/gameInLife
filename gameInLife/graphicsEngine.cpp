@@ -19,7 +19,7 @@ graphicsEngine::~graphicsEngine()
 	delete[] colors;
 }
 
-void graphicsEngine::update(bool** dispRows)
+void graphicsEngine::update(char** dispRows)
 {
 	cv::Mat screen = cv::Mat(height, width, CV_8UC3, cv::Scalar(0, 0, 0));
 	static cv::Vec3b color(255, 0, 0);
