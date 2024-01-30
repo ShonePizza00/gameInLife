@@ -19,6 +19,7 @@ private:
 	unsigned int size_y;
 	int width;
 	int height;
+	cv::Vec3b* colors;
 };
 
 
