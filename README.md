@@ -1,5 +1,5 @@
 ## Building:
 ### Windows:
-Visual Studio
+Visual Studio + OpenCV2
 ### Linux:
 make
